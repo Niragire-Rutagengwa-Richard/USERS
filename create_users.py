@@ -37,8 +37,8 @@ def generate_template():
         writer.writerow(SAMPLE_ROW)
     print(f"✅ Template saved as '{TEMPLATE_FILE}'.")
 
-# --- Uncomment the line below to generate the template ---
-# generate_template()
+ #Uncomment the line below to generate the template ---
+generate_template()
 
 # --- Create users from CSV ---
 headers = {"Content-Type": "application/json"}
