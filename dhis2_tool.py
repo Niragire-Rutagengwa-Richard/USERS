@@ -10,7 +10,7 @@ import os
 # --- Configuration ---
 DHIS2_BASE_URL = "https://online.hisprwanda.org/microplanrw"
 USERNAME = "rniragire2"
-PASSWORD = "Atete@42"  # Replace with your actual password before running
+PASSWORD = "your_password_here"  # Replace with your actual password
 CSV_FILE = "users.csv"
 TEMPLATE_FILE = "users_template.csv"
 
@@ -35,7 +35,7 @@ def generate_template():
         writer = csv.writer(f)
         writer.writerow(CSV_COLUMNS)
         writer.writerow(SAMPLE_ROW)
-    print(f"✅ Template saved as '{TEMPLATE_FILE}'.")
+    print(f"✅ Template saved as '{TEMPLATE_FILE}'. Fill it in and rename it to '{CSV_FILE}' before running the import.")
 
 # --- Uncomment the line below to generate the template ---
 # generate_template()
@@ -45,7 +45,7 @@ headers = {"Content-Type": "application/json"}
 auth = (USERNAME, PASSWORD)
 
 if not os.path.exists(CSV_FILE):
-    print(f"❌ '{CSV_FILE}' not found. Uncomment generate_template() to create a template.")
+    print(f"❌ '{CSV_FILE}' not found. Run generate_template() first to create a template.")
 else:
     with open(CSV_FILE, newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
